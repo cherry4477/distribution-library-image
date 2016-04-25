@@ -18,13 +18,13 @@ storage:
         rootdirectory: /
 notifications:
     endpoints:
-      - name: portus
-        disabled: false
-        url: 
-        headers: X-Content-Type-Options: [nosniff]
-        timeout: 500ms
-        threshold: 5
-        backoff: 1s
+      name: portus
+      disabled: false
+      url: http://portus.app.asiainfodata.com/v2/webhooks/events
+      headers: X-Content-Type-Options: [nosniff]
+      timeout: 500ms
+      threshold: 5
+      backoff: 1s
 http:
     addr: :5000
     headers:
