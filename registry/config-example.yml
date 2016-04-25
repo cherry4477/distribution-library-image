@@ -2,29 +2,16 @@ version: 0.1
 log:
   fields:
     service: registry
-storage:
-    delete:
-      enabled: true
-    cache:
-        blobdescriptor: inmemory
-    s3:
-        accesskey:
-        secretkey:
-        region:
-        bucket:
-        encrypt: false
-        secure: true
-        v4auth: true
-        rootdirectory: /
 notifications:
     endpoints:
-      name: portus
-      disabled: false
-      url: http://portus.app.asiainfodata.com/v2/webhooks/events
-      headers: X-Content-Type-Options: [nosniff]
-      timeout: 500ms
-      threshold: 5
-      backoff: 1s
+        - name: portus
+          url: http://portus.app.asiainfodata.com/v2/webhooks/events
+          headers:
+             Authorization: 12345678 
+          timeout: 1s
+          threshold: 10
+          backoff: 1s
+          disabled: false
 http:
     addr: :5000
     headers:
