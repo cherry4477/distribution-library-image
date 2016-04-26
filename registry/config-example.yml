@@ -11,6 +11,20 @@ notifications:
           threshold: 10
           backoff: 1s
           disabled: false
+storage:
+    delete:
+      enabled: true
+    cache:
+        blobdescriptor: inmemory
+    s3:
+        accesskey:
+        secretkey:
+        region:
+        bucket:
+        encrypt: false
+        secure: true
+        v4auth: true
+        rootdirectory: /
 http:
     addr: :5000
     headers:
