@@ -6,8 +6,7 @@ notifications:
     endpoints:
         - name: portus
           url: http://portus.app.asiainfodata.com/v2/webhooks/events
-          headers:
-             Authorization: X-Content-Type-Options: [nosniff]
+          headers: null
           timeout: 1s
           threshold: 10
           backoff: 1s
