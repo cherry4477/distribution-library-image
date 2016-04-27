@@ -5,6 +5,7 @@ FROM debian:jessie
 RUN apt-get update && \
     apt-get install -y ca-certificates librados2 apache2-utils && \
     rm -rf /var/lib/apt/lists/*
+RUN echo "Asia/Shanghai" > /etc/timezone
 
 COPY ./registry/registry /bin/registry
 COPY ./registry/config-example.yml /etc/docker/registry/config.yml
